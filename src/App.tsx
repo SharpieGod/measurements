@@ -13,7 +13,6 @@ function calculate(target: number): Combination {
   let combinations: Combination[] = [];
 
   for (let i = 0; i < VALUES.length; i++) {
-    let v = VALUES[i];
     let curr: Combination = {
       comb: {},
       val: target,
@@ -57,11 +56,9 @@ const App = () => {
     setCalculated(calculate(target));
   }, [target]);
   return (
-    <div className="rounded-lg shadow-xl mt-48 text-3xl w-3/5 mx-auto flex items-start flex-col gap-12 p-12">
+    <div className="rounded-lg shadow-xl mt-48 md:text-3xl md:w-3/5 m-12 md:mx-auto flex items-start flex-col gap-6 md:gap-12 p-6 md:p-12">
       <div className="flex flex-col gap-3 w-full">
-        <h1 className="text-3xl">
-          Volume to Dry Measure & Measuring Spoons
-        </h1>
+        <h1 className="">Volume to Dry Measure & Measuring Spoons</h1>
         <input
           placeholder="Enter wanted value in mL"
           type="number"
@@ -74,7 +71,7 @@ const App = () => {
         />
       </div>
       {/* <pre>{JSON.stringify(calculated)}</pre> */}
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-1.5 md:gap-3">
         {calculated
           ? Object.keys(calculated["comb"]).map((k) => {
               const key = Number(k);
